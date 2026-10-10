@@ -1,0 +1,1623 @@
+[
+  {
+    "sheet": "Краски",
+    "title": "Краска ПУ/эпоксидная, двухкомпонентная",
+    "usesLength": false,
+    "defaultArea": 593.12,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 736.0,
+        "rateRaw": 0.7,
+        "eRaw": "=30*F4",
+        "fRaw": "=CEILING($F$2*C4/30,1)",
+        "type": "PER_AREA",
+        "rate": 0.7,
+        "pack": 30.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска акриловая, однокомпонентная",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan AC-C101",
+        "pricePerUnit": 464.61,
+        "rateRaw": 0.7,
+        "eRaw": "=20*F11",
+        "fRaw": "=CEILING(F9*C11/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.7,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска двухкомпонентная с грунтом",
+    "usesLength": false,
+    "defaultArea": 47.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 637.0,
+        "rateRaw": 0.5,
+        "eRaw": "=30*F18",
+        "fRaw": "=CEILING($F$16*C18/30,1)",
+        "type": "PER_AREA",
+        "rate": 0.5,
+        "pack": 30.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 984.0,
+        "rateRaw": 0.6,
+        "eRaw": "=F19*20",
+        "fRaw": "=CEILING($F$16*C19/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска однокомпонентная с грунтом",
+    "usesLength": false,
+    "defaultArea": 47.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan AC-C101",
+        "pricePerUnit": 637.0,
+        "rateRaw": 0.5,
+        "eRaw": "=20*F26",
+        "fRaw": "=CEILING($F$24*C26/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.5,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 984.0,
+        "rateRaw": 0.6,
+        "eRaw": "=F27*20",
+        "fRaw": "=CEILING($F$24*C27/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска двухкомпонентная c флоками",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 637.0,
+        "rateRaw": 0.6,
+        "eRaw": "=30*F34",
+        "fRaw": "=CEILING(F32*C34/30,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 30.0
+      },
+      {
+        "name": "Цветные флоки (чипсы)",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.01,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F32*C35,0.4)",
+        "fRaw": null,
+        "type": "PER_AREA",
+        "rate": 0.01,
+        "pack": 0.4
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2340.0,
+        "rateRaw": 0.1,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F32*C36,5)",
+        "fRaw": "=E36/5",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска однокомпонентная c флоками",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 637.0,
+        "rateRaw": 0.6,
+        "eRaw": "=20*F43",
+        "fRaw": "=CEILING(F41*C43/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      },
+      {
+        "name": "Цветные флоки (чипсы)",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.01,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F41*C44,0.4)",
+        "fRaw": null,
+        "type": "PER_AREA",
+        "rate": 0.01,
+        "pack": 0.4
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2340.0,
+        "rateRaw": 0.1,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F41*C45,5)",
+        "fRaw": "=E45/5",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска двухкомпонентная с грунтом и флоками",
+    "usesLength": false,
+    "defaultArea": 90.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 640.0,
+        "rateRaw": 0.4,
+        "eRaw": "=30*F52",
+        "fRaw": "=CEILING(F50*C52/30,1)",
+        "type": "PER_AREA",
+        "rate": 0.4,
+        "pack": 30.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 0.4,
+        "eRaw": "=F53*20",
+        "fRaw": "=CEILING(F50*C53/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.4,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F54*20",
+        "fRaw": "=CEILING(F50*C54/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      },
+      {
+        "name": "Цветные флоки (чипсы)",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.01,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F50*C55,0.4)",
+        "fRaw": null,
+        "type": "PER_AREA",
+        "rate": 0.01,
+        "pack": 0.4
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.08,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F50*C56,5)",
+        "fRaw": "=CEILING(F50*C56/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.08,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Краски",
+    "title": "Краска акриловая, однокомпонентная с грунтом и флоками",
+    "usesLength": false,
+    "defaultArea": 500.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan PU-C101",
+        "pricePerUnit": 640.0,
+        "rateRaw": 0.4,
+        "eRaw": "=20*F63",
+        "fRaw": "=CEILING(F61*C63/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.4,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 0.4,
+        "eRaw": "=F64*20",
+        "fRaw": "=CEILING(F61*C64/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.4,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F65*20",
+        "fRaw": "=CEILING(F61*C65/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      },
+      {
+        "name": "Цветные флоки (чипсы)",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.01,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F61*C66,0.4)",
+        "fRaw": null,
+        "type": "PER_AREA",
+        "rate": 0.01,
+        "pack": 0.4
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2200.0,
+        "rateRaw": 0.08,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F61*C67,5)",
+        "fRaw": "=CEILING(F61*C67/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.08,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Нейтрал",
+    "usesLength": false,
+    "defaultArea": 220.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C251",
+        "pricePerUnit": 671.0,
+        "rateRaw": 2.5,
+        "eRaw": "=25*F4",
+        "fRaw": "=CEILING($F$2*C4/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.5,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 808.25,
+        "rateRaw": 0.7,
+        "eRaw": "=F5*20",
+        "fRaw": "=CEILING($F$2*C5/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.7,
+        "pack": 20.0
+      },
+      {
+        "name": "Базовый эпоксидный состав Praspan EP-С150",
+        "pricePerUnit": 529.69,
+        "rateRaw": 1,
+        "eRaw": "=F6*30",
+        "fRaw": "=CEILING($F$2*C6/30,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 30.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Стандарт",
+    "usesLength": false,
+    "defaultArea": 46.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C251",
+        "pricePerUnit": 660.0,
+        "rateRaw": 2.2,
+        "eRaw": "=25*F13",
+        "fRaw": "=CEILING($F$11*C13/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.2,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 0.6,
+        "eRaw": "=F14*20",
+        "fRaw": "=CEILING($F$11*C14/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Стандарт с лаком",
+    "usesLength": false,
+    "defaultArea": 75.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C250",
+        "pricePerUnit": 727.0,
+        "rateRaw": 2.2,
+        "eRaw": "=25*F21",
+        "fRaw": "=CEILING(F19*C21/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.2,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 0.6,
+        "eRaw": "=F22*20",
+        "fRaw": "=CEILING(F19*C22/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2500.0,
+        "rateRaw": 0.1,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F19*C23,5)",
+        "fRaw": "=E23/5",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Стандарт с флоками",
+    "usesLength": false,
+    "defaultArea": 27.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C251",
+        "pricePerUnit": 671.0,
+        "rateRaw": 2.5,
+        "eRaw": "=25*F30",
+        "fRaw": "=CEILING(F28*C30/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.5,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 808.25,
+        "rateRaw": 0.8,
+        "eRaw": "=F31*20",
+        "fRaw": "=CEILING(F28*C31/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Цветные флоки (чипсы)",
+        "pricePerUnit": 2225.49,
+        "rateRaw": 0.01,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F28*C32,0.4)",
+        "fRaw": null,
+        "type": "PER_AREA",
+        "rate": 0.01,
+        "pack": 0.4
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 929.24,
+        "rateRaw": 0.1,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F28*C33,5)",
+        "fRaw": "=E33/5",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Паркинг",
+    "usesLength": false,
+    "defaultArea": 352.58,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Пигментная паста тип 1",
+        "pricePerUnit": 630.0,
+        "rateRaw": null,
+        "eRaw": "=F40*0.5",
+        "fRaw": "=_xlfn.CEILING.PRECISE(F41*0.5,1)",
+        "type": "UNKNOWN",
+        "rate": null,
+        "pack": 0.5
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 1000.0,
+        "rateRaw": 1.7,
+        "eRaw": "=F41*20",
+        "fRaw": "=CEILING($F$38*C41/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.7,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6 мм",
+        "pricePerUnit": 18.0,
+        "rateRaw": 3,
+        "eRaw": "=F42*20",
+        "fRaw": "=CEILING($F$38*C42/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F43*20",
+        "fRaw": "=CEILING($F$38*C43/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Хард",
+    "usesLength": false,
+    "defaultArea": 60.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C250",
+        "pricePerUnit": 660.0,
+        "rateRaw": 2,
+        "eRaw": "=25*F50",
+        "fRaw": "=CEILING(F48*C50/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.0,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 1.7,
+        "eRaw": "=F51*20",
+        "fRaw": "=CEILING(F48*C51/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.7,
+        "pack": 20.0
+      },
+      {
+        "name": "Стеклоткань плотность 300",
+        "pricePerUnit": 120.0,
+        "rateRaw": null,
+        "eRaw": "=F52*100",
+        "fRaw": "=CEILING(F48/100,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 100.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F53*20",
+        "fRaw": "=CEILING(F48*C53/30.6,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Хард с лаком",
+    "usesLength": false,
+    "defaultArea": 600.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C251 RAL 7001",
+        "pricePerUnit": 660.0,
+        "rateRaw": 2,
+        "eRaw": "=25*F60",
+        "fRaw": "=CEILING(F58*C60/25,1)",
+        "type": "PER_AREA",
+        "rate": 2.0,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 1.7,
+        "eRaw": "=F61*20",
+        "fRaw": "=CEILING(F58*C61/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.7,
+        "pack": 20.0
+      },
+      {
+        "name": "Стеклоткань плотность 300",
+        "pricePerUnit": 120.0,
+        "rateRaw": null,
+        "eRaw": "=F62*100",
+        "fRaw": "=CEILING(F58/100,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 100.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F63*20",
+        "fRaw": "=CEILING(F58*C63/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      },
+      {
+        "name": "Полиуретановый лак «PRASPAN® PU-T300»",
+        "pricePerUnit": 2500.0,
+        "rateRaw": 0.1,
+        "eRaw": "=_xlfn.CEILING.PRECISE(F58*C64,5)",
+        "fRaw": "=E64/5",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Антистатик",
+    "usesLength": false,
+    "defaultArea": 5000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C201AS RAL 7001",
+        "pricePerUnit": 829.6,
+        "rateRaw": 3,
+        "eRaw": "=22.54*F71",
+        "fRaw": "=CEILING(F69*C71/22.54,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 22.54
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 808.25,
+        "rateRaw": 0.6,
+        "eRaw": "=F72*20",
+        "fRaw": "=CEILING(F69*C72/22.54,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-E100",
+        "pricePerUnit": 1342.0,
+        "rateRaw": 0.1,
+        "eRaw": "=F73*5",
+        "fRaw": "=CEILING(F69*C73/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      },
+      {
+        "name": "Медная лента",
+        "pricePerUnit": 38.64,
+        "rateRaw": 1.33,
+        "eRaw": "=F74*20",
+        "fRaw": "=CEILING(F69*C74/22.54,1)",
+        "type": "PER_AREA",
+        "rate": 1.33,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Антистатик 301",
+    "usesLength": false,
+    "defaultArea": 1550.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan EP-C301AS RAL 7042",
+        "pricePerUnit": 861.0,
+        "rateRaw": 3,
+        "eRaw": "=22.54*F81",
+        "fRaw": "=CEILING(F79*C81/22.54,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 22.54
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 0.5,
+        "eRaw": "=F82*20",
+        "fRaw": "=CEILING(F79*C82/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.5,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-E100",
+        "pricePerUnit": 1755.0,
+        "rateRaw": 0.06,
+        "eRaw": "=F83*5",
+        "fRaw": "=CEILING(F79*C83/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.06,
+        "pack": 5.0
+      },
+      {
+        "name": "Медная лента",
+        "pricePerUnit": 100.0,
+        "rateRaw": 1.33,
+        "eRaw": "=F84*20",
+        "fRaw": "=CEILING(F79*C84/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.33,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F85*20",
+        "fRaw": "=CEILING(F79*C85/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Эпоксид",
+    "title": "Praspan Химфлор",
+    "usesLength": false,
+    "defaultArea": 500.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Покровный состав Praspan UP-C301 СР RAL 7001",
+        "pricePerUnit": 650.0,
+        "rateRaw": 2,
+        "eRaw": "=26*F92",
+        "fRaw": "=CEILING(F90*C92/26,1)",
+        "type": "PER_AREA",
+        "rate": 2.0,
+        "pack": 26.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan UP-P100",
+        "pricePerUnit": 1200.0,
+        "rateRaw": 1.7,
+        "eRaw": "=F93*20.5",
+        "fRaw": "=CEILING(F90*C93/20.5,1)",
+        "type": "PER_AREA",
+        "rate": 1.7,
+        "pack": 20.5
+      },
+      {
+        "name": "Стеклоткань плотность 300",
+        "pricePerUnit": 120.0,
+        "rateRaw": null,
+        "eRaw": "=F94*100",
+        "fRaw": "=CEILING(F90/100,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 100.0
+      },
+      {
+        "name": "Кварцевый песок 0,2-0,63 мм",
+        "pricePerUnit": 15.0,
+        "rateRaw": 0.2,
+        "eRaw": "=F95*20",
+        "fRaw": "=CEILING(F90*C95/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Топп, стяжки",
+    "title": "RD",
+    "usesLength": false,
+    "defaultArea": 40.0,
+    "defaultThickness": 40.0,
+    "items": [
+      {
+        "name": "Сухая смесь Linolit RD",
+        "pricePerUnit": 48.0,
+        "rateRaw": "=F3*2.3",
+        "eRaw": "=20*F5",
+        "fRaw": "=CEILING($F$2*C5/20,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.3,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 1097.0,
+        "rateRaw": 1,
+        "eRaw": "=F6*20",
+        "fRaw": "=CEILING($F$2*C6/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 21.6,
+        "rateRaw": 3,
+        "eRaw": "=F7*20",
+        "fRaw": "=CEILING($F$2*C7/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Refloor AC-S200",
+        "pricePerUnit": 518.4,
+        "rateRaw": 0.1,
+        "eRaw": "=F8*20",
+        "fRaw": "=CEILING($F$2*C8/18,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Топп, стяжки",
+    "title": "Refloor Screed 100",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": 50.0,
+    "items": [
+      {
+        "name": "Refloor Screed 100",
+        "pricePerUnit": 22.5,
+        "rateRaw": "=F14*2.5",
+        "eRaw": "=45*F16",
+        "fRaw": "=CEILING(F13*C16/45,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.5,
+        "pack": 45.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 745.0,
+        "rateRaw": 1,
+        "eRaw": "=F17*20",
+        "fRaw": "=CEILING(F13*C17/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 18.0,
+        "rateRaw": 3,
+        "eRaw": "=F18*20",
+        "fRaw": "=CEILING(F13*C18/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Refloor AC-S200",
+        "pricePerUnit": 400.0,
+        "rateRaw": 0.1,
+        "eRaw": "=F19*18",
+        "fRaw": "=CEILING(F13*C19/18,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 18.0
+      },
+      {
+        "name": "Герметик PU 40",
+        "pricePerUnit": 500.0,
+        "rateRaw": 0.04,
+        "eRaw": "=F20",
+        "fRaw": "=CEILING(F13*C20/1,1)",
+        "type": "PER_AREA",
+        "rate": 0.04,
+        "pack": 1.0
+      }
+    ]
+  },
+  {
+    "sheet": "Топп, стяжки",
+    "title": "Refloor Screed C",
+    "usesLength": false,
+    "defaultArea": 40.0,
+    "defaultThickness": 40.0,
+    "items": [
+      {
+        "name": "Refloor Screed C",
+        "pricePerUnit": 60.0,
+        "rateRaw": "=F26*2.5",
+        "eRaw": "=45*F28",
+        "fRaw": "=CEILING(F25*C28/45,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.5,
+        "pack": 45.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 1100.0,
+        "rateRaw": 0.8,
+        "eRaw": "=F29*20",
+        "fRaw": "=CEILING(F25*C29/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 18.0,
+        "rateRaw": 3,
+        "eRaw": "=F30*20",
+        "fRaw": "=CEILING(F25*C30/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Refloor AC-S200",
+        "pricePerUnit": 380.0,
+        "rateRaw": 0.1,
+        "eRaw": "=F31*18",
+        "fRaw": "=CEILING(F25*C31/18,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 18.0
+      }
+    ]
+  },
+  {
+    "sheet": "Топп, стяжки",
+    "title": "Топпинг корундовый",
+    "usesLength": false,
+    "defaultArea": 5000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Топпинг Refloor CT-S200 (натуральный)",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 25,
+        "type": "FIXED",
+        "rate": 25.0,
+        "pack": null
+      },
+      {
+        "name": "Силер Refloor AC-S200",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 20,
+        "type": "FIXED",
+        "rate": 20.0,
+        "pack": null
+      },
+      {
+        "name": "Герметик Linolit PU 40 FC",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 0.6,
+        "type": "FIXED",
+        "rate": 0.6,
+        "pack": null
+      },
+      {
+        "name": "Вилатерм Ø6 (шнур)",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 0.005,
+        "type": "FIXED",
+        "rate": 0.005,
+        "pack": null
+      }
+    ]
+  },
+  {
+    "sheet": "Lincrete",
+    "title": "Lincrete SL 4-6 мм",
+    "usesLength": false,
+    "defaultArea": 2055.0,
+    "defaultThickness": 4.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete SL",
+        "pricePerUnit": 381.25,
+        "rateRaw": "=1.8*G4",
+        "eRaw": "=35.635*G6",
+        "fRaw": "=CEILING($G$3*D6/35.635,1)",
+        "type": "PER_AREA_MM",
+        "rate": 1.8,
+        "pack": 35.635
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 618.14,
+        "rateRaw": 0.8,
+        "eRaw": "=G7*20",
+        "fRaw": "=CEILING($G$3*D7/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Lincrete",
+    "title": "Lincrete ST",
+    "usesLength": false,
+    "defaultArea": 2055.0,
+    "defaultThickness": 6.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete ST",
+        "pricePerUnit": 257.21,
+        "rateRaw": "=G13*2.2",
+        "eRaw": "=31.015*G15",
+        "fRaw": "=CEILING(G12*D15/31.015,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.2,
+        "pack": 31.015
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 618.14,
+        "rateRaw": 1,
+        "eRaw": "=G16*20",
+        "fRaw": "=CEILING(G12*D16/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Lincrete",
+    "title": "Lincrete TX",
+    "usesLength": true,
+    "defaultArea": 100.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Материал для изготовления плинтуса Linolit Lincrete ТХ",
+        "pricePerUnit": 231.0,
+        "rateRaw": 4,
+        "eRaw": "=19.24*G23",
+        "fRaw": "=CEILING(D23*G21/19.24,1)",
+        "type": "PER_LENGTH",
+        "rate": 4.0,
+        "pack": 19.24
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 543.0,
+        "rateRaw": 0.2,
+        "eRaw": "=20*G24",
+        "fRaw": "=CEILING(G21*D24/20,1)",
+        "type": "PER_LENGTH",
+        "rate": 0.2,
+        "pack": 20.0
+      }
+    ]
+  },
+  {
+    "sheet": "Lincrete",
+    "title": "Lincrete AS ECF",
+    "usesLength": false,
+    "defaultArea": 340.0,
+    "defaultThickness": 4.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete AS ECF (3-6)",
+        "pricePerUnit": 706.59,
+        "rateRaw": "=1.96*G30",
+        "eRaw": "=35.635*G32",
+        "fRaw": "=CEILING(G29*D32/35.635,1)",
+        "type": "PER_AREA_MM",
+        "rate": 1.96,
+        "pack": 35.635
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 618.14,
+        "rateRaw": 0.8,
+        "eRaw": "=G33*20",
+        "fRaw": "=CEILING(G29*D33/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Токопроводящий Грунтовочный состав Lincrete P-100 AS",
+        "pricePerUnit": 1335.9,
+        "rateRaw": 0.1,
+        "eRaw": 15,
+        "fRaw": 3,
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      },
+      {
+        "name": "Медная лента",
+        "pricePerUnit": 38.64,
+        "rateRaw": 1.33,
+        "eRaw": 180,
+        "fRaw": 6,
+        "type": "PER_AREA",
+        "rate": 1.33,
+        "pack": 30.0
+      }
+    ]
+  },
+  {
+    "sheet": "Lincrete",
+    "title": "Lincrete SL 2",
+    "usesLength": false,
+    "defaultArea": 40.0,
+    "defaultThickness": 4.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete SL",
+        "pricePerUnit": 408.7,
+        "rateRaw": "=1.85*G42",
+        "eRaw": "=25*G44",
+        "fRaw": "=CEILING(G41*D44/25,1)",
+        "type": "PER_AREA_MM",
+        "rate": 1.85,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 618.14,
+        "rateRaw": 0.8,
+        "eRaw": "=G45*20",
+        "fRaw": "=CEILING(G41*D45/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Полимерный ремонтный состав Linolit 11 натуральный 2,6 кг",
+        "pricePerUnit": 2417.72,
+        "rateRaw": null,
+        "eRaw": 2.6,
+        "fRaw": 1,
+        "type": "FIXED",
+        "rate": 1.0,
+        "pack": 2.6
+      }
+    ]
+  },
+  {
+    "sheet": "Лист2",
+    "title": "Lincrete AS DIF",
+    "usesLength": false,
+    "defaultArea": 120.0,
+    "defaultThickness": 4.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete AS DIF (3-6)",
+        "pricePerUnit": 672.01,
+        "rateRaw": "=1.96*F3",
+        "eRaw": "=35.635*F5",
+        "fRaw": "=CEILING(F2*C5/35.635,1)",
+        "type": "PER_AREA_MM",
+        "rate": 1.96,
+        "pack": 35.635
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 618.14,
+        "rateRaw": 0.8,
+        "eRaw": "=F6*20",
+        "fRaw": "=CEILING(F2*C6/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Токопроводящий Грунтовочный состав Lincrete P-100 AS",
+        "pricePerUnit": 1335.9,
+        "rateRaw": 0.1,
+        "eRaw": 15,
+        "fRaw": 3,
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      },
+      {
+        "name": "Медная лента",
+        "pricePerUnit": 38.64,
+        "rateRaw": 1.33,
+        "eRaw": 180,
+        "fRaw": 6,
+        "type": "PER_AREA",
+        "rate": 1.33,
+        "pack": 30.0
+      }
+    ]
+  },
+  {
+    "sheet": "Лист1",
+    "title": "Lincrete SL 2",
+    "usesLength": false,
+    "defaultArea": 400.0,
+    "defaultThickness": 2.0,
+    "items": [
+      {
+        "name": "Полиуретан-цементное химстойкое покрытие Linolit Lincrete SL",
+        "pricePerUnit": 408.7,
+        "rateRaw": "=1.8*F3",
+        "eRaw": "=25*F5",
+        "fRaw": "=CEILING(F2*C5/25,1)",
+        "type": "PER_AREA_MM",
+        "rate": 1.8,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав Lincrete P-100",
+        "pricePerUnit": 927.2,
+        "rateRaw": 0.8,
+        "eRaw": "=F6*20",
+        "fRaw": "=CEILING(F2*C6/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Полимерный ремонтный состав Linolit 11 натуральный 2,6",
+        "pricePerUnit": 2417.72,
+        "rateRaw": null,
+        "eRaw": 10.4,
+        "fRaw": 4,
+        "type": "FIXED",
+        "rate": 4.0,
+        "pack": 2.6
+      },
+      {
+        "name": "Ремонтный состав Linolit RE",
+        "pricePerUnit": 139.29,
+        "rateRaw": null,
+        "eRaw": "300 кг",
+        "fRaw": 15,
+        "type": "FIXED",
+        "rate": 15.0,
+        "pack": null
+      }
+    ]
+  },
+  {
+    "sheet": "МТ",
+    "title": "МТ",
+    "usesLength": false,
+    "defaultArea": 200.0,
+    "defaultThickness": 10.0,
+    "items": [
+      {
+        "name": "Linolit® Microterrazzo®",
+        "pricePerUnit": 100.0,
+        "rateRaw": "=F2*2.3",
+        "eRaw": "=40.4*F4",
+        "fRaw": "=CEILING($F$1*C4/40.4,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.3,
+        "pack": 40.4
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 1000.0,
+        "rateRaw": 1,
+        "eRaw": "=F5*20",
+        "fRaw": "=CEILING($F$1*C5/20,1)",
+        "type": "PER_AREA",
+        "rate": 1.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 18.0,
+        "rateRaw": 3,
+        "eRaw": "=F6*20",
+        "fRaw": "=CEILING($F$1*C6/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Refloor AC-S200",
+        "pricePerUnit": 350.0,
+        "rateRaw": 0.1,
+        "eRaw": "=F7*18",
+        "fRaw": "=CEILING($F$1*C7/18,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 18.0
+      }
+    ]
+  },
+  {
+    "sheet": "Ansaf",
+    "title": "Ansaf",
+    "usesLength": false,
+    "defaultArea": 770.0,
+    "defaultThickness": 33.0,
+    "items": [
+      {
+        "name": "Сухая смесь Linolit Ansaf",
+        "pricePerUnit": 84.65,
+        "rateRaw": "=F2*2.4",
+        "eRaw": "=20*F4",
+        "fRaw": "=CEILING($F$1*C4/20,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.4,
+        "pack": 20.0
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 808.25,
+        "rateRaw": 0.8,
+        "eRaw": "=F5*20",
+        "fRaw": "=CEILING($F$1*C5/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.8,
+        "pack": 20.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 5.0,
+        "rateRaw": 3,
+        "eRaw": "=F6*20",
+        "fRaw": "=CEILING($F$1*C6/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      },
+      {
+        "name": "Refloor AC-S200",
+        "pricePerUnit": 685.0,
+        "rateRaw": 0.1,
+        "eRaw": "=F7*20",
+        "fRaw": "=CEILING($F$1*C7/18,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 20.0
+      },
+      {
+        "name": "Полимерный ремонтный состав Linolit 11",
+        "pricePerUnit": 2417.72,
+        "rateRaw": null,
+        "eRaw": 20.8,
+        "fRaw": 8,
+        "type": "FIXED",
+        "rate": 8.0,
+        "pack": 2.6
+      },
+      {
+        "name": "Гидрофобная экстраполироль  Linolit 100",
+        "pricePerUnit": 1068.62,
+        "rateRaw": null,
+        "eRaw": 25,
+        "fRaw": 5,
+        "type": "FIXED",
+        "rate": 5.0,
+        "pack": 5.0
+      },
+      {
+        "name": "Гидрофобизатор Linolit HB",
+        "pricePerUnit": 874.34,
+        "rateRaw": null,
+        "eRaw": 15,
+        "fRaw": 3,
+        "type": "FIXED",
+        "rate": 3.0,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "МБ",
+    "title": "Linolit Microbeton для пола",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "LINOLIT MICROBETON база",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 25,
+        "type": "FIXED",
+        "rate": 25.0,
+        "pack": null
+      },
+      {
+        "name": "LINOLIT MICROBETON финиш",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 25,
+        "type": "FIXED",
+        "rate": 25.0,
+        "pack": null
+      },
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 20,
+        "type": "FIXED",
+        "rate": 20.0,
+        "pack": null
+      },
+      {
+        "name": "Кварцевый песок 0,2-0.63 мм",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 10,
+        "type": "FIXED",
+        "rate": 10.0,
+        "pack": null
+      },
+      {
+        "name": "Лак полиуретановый Praspan PU-T300",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 5,
+        "type": "FIXED",
+        "rate": 5.0,
+        "pack": null
+      }
+    ]
+  },
+  {
+    "sheet": "МБ",
+    "title": "Linolit Microbeton для стен",
+    "usesLength": false,
+    "defaultArea": 1000.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "LINOLIT MICROBETON база",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 25,
+        "type": "FIXED",
+        "rate": 25.0,
+        "pack": null
+      },
+      {
+        "name": "LINOLIT MICROBETON финиш",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 25,
+        "type": "FIXED",
+        "rate": 25.0,
+        "pack": null
+      },
+      {
+        "name": "Грунт для стен LINOLIT MICROBETON P-100",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 5,
+        "type": "FIXED",
+        "rate": 5.0,
+        "pack": null
+      },
+      {
+        "name": "Защитный восковой состав LINOLIT MICROBETON",
+        "pricePerUnit": null,
+        "rateRaw": null,
+        "eRaw": null,
+        "fRaw": 1,
+        "type": "FIXED",
+        "rate": 1.0,
+        "pack": null
+      }
+    ]
+  },
+  {
+    "sheet": "Грунт",
+    "title": "Грунт колерованный",
+    "usesLength": false,
+    "defaultArea": 400.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Грунтовочный состав Praspan EP-P150",
+        "pricePerUnit": 808.25,
+        "rateRaw": 0.6,
+        "eRaw": "=20*F4",
+        "fRaw": "=CEILING($F$2*C4/20,1)",
+        "type": "PER_AREA",
+        "rate": 0.6,
+        "pack": 20.0
+      },
+      {
+        "name": "Паста колеровочная",
+        "pricePerUnit": 1992.66,
+        "rateRaw": null,
+        "eRaw": 7.2,
+        "fRaw": 12,
+        "type": "FIXED",
+        "rate": 12.0,
+        "pack": 0.6
+      }
+    ]
+  },
+  {
+    "sheet": "Химия",
+    "title": "Гидрофобизатор Linolit HB",
+    "usesLength": false,
+    "defaultArea": 100.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Гидрофобизатор бетона Linolit HB",
+        "pricePerUnit": 860.0,
+        "rateRaw": 0.2,
+        "eRaw": "=5*F4",
+        "fRaw": "=CEILING($F$2*C4/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Химия",
+    "title": "Уплотнитель поверхности Linolit FC3",
+    "usesLength": false,
+    "defaultArea": 100.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Уплотнитель поверхности Linolit FC3",
+        "pricePerUnit": 445.3,
+        "rateRaw": 0.2,
+        "eRaw": "=5*F11",
+        "fRaw": "=CEILING($F$9*C11/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Химия",
+    "title": "Уплотнитель пор и трещин Linolit PCF",
+    "usesLength": false,
+    "defaultArea": 100.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Уплотнитель пор и трещин Linolit PCF",
+        "pricePerUnit": 505.0,
+        "rateRaw": 0.2,
+        "eRaw": "=10*F18",
+        "fRaw": "=CEILING(F16*C18/10,1)",
+        "type": "PER_AREA",
+        "rate": 0.2,
+        "pack": 10.0
+      }
+    ]
+  },
+  {
+    "sheet": "Химия",
+    "title": "Гидрофобная экстраполироль Linolit 100",
+    "usesLength": false,
+    "defaultArea": 100.0,
+    "defaultThickness": null,
+    "items": [
+      {
+        "name": "Гидрофобная экстраполироль Linolit 100",
+        "pricePerUnit": 1051.1,
+        "rateRaw": 0.1,
+        "eRaw": "=5*F25",
+        "fRaw": "=CEILING(F23*C25/5,1)",
+        "type": "PER_AREA",
+        "rate": 0.1,
+        "pack": 5.0
+      }
+    ]
+  },
+  {
+    "sheet": "Самонив.",
+    "title": "REFLOOR® CS-S100 SL",
+    "usesLength": false,
+    "defaultArea": 40.0,
+    "defaultThickness": 40.0,
+    "items": [
+      {
+        "name": "Сухая смесь REFLOOR® CS-S100 SL",
+        "pricePerUnit": 52.0,
+        "rateRaw": "=F3*2.3",
+        "eRaw": "=25*F5",
+        "fRaw": "=CEILING($F$2*C5/25,1)",
+        "type": "PER_AREA_MM",
+        "rate": 2.3,
+        "pack": 25.0
+      },
+      {
+        "name": "Грунтовочный состав REFLOOR® AC-W100 pro",
+        "pricePerUnit": 197.0,
+        "rateRaw": 0.4,
+        "eRaw": "=F3*10",
+        "fRaw": "=CEILING($F$2*C6/10,1)",
+        "type": "PER_AREA",
+        "rate": 0.4,
+        "pack": 10.0
+      },
+      {
+        "name": "Кварцевый песок 0,6-1,6",
+        "pricePerUnit": 15.0,
+        "rateRaw": 3,
+        "eRaw": "=F7*20",
+        "fRaw": "=CEILING($F$2*C7/20,1)",
+        "type": "PER_AREA",
+        "rate": 3.0,
+        "pack": 20.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+# Локальная БД для разработки: docker compose -f docker-compose.dev.yml up -d
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: betonpoli
+      POSTGRES_PASSWORD: betonpoli
+      POSTGRES_DB: betonpoli
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - betonpoli-dev-db:/var/lib/postgresql/data
+volumes:
+  betonpoli-dev-db:

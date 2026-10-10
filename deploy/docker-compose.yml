@@ -1,0 +1,70 @@
+# Прод на VPS: cd /opt/betonpoli/deploy && docker compose -p betonpoli up -d --build
+# Рядом с polexpert — приложение слушает только 127.0.0.1:3010, наружу через nginx хоста.
+services:
+  app:
+    build:
+      context: ../web
+      args:
+        NEXT_PUBLIC_BASE_PATH: ${BASE_PATH:-}
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://betonpoli:${POSTGRES_PASSWORD}@db:5432/betonpoli?schema=public
+    ports:
+      - "127.0.0.1:${APP_PORT:-3010}:3000"
+    volumes:
+      - ./data/uploads:/data/uploads
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  # Применяет миграции перед стартом app
+  migrate:
+    build:
+      context: ../web
+      target: build
+      args:
+        NEXT_PUBLIC_BASE_PATH: ${BASE_PATH:-}
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://betonpoli:${POSTGRES_PASSWORD}@db:5432/betonpoli?schema=public
+    command: npx prisma migrate deploy
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Разовый сид демо-данных: docker compose --profile tools run --rm seed
+  seed:
+    profiles: ["tools"]
+    build:
+      context: ../web
+      target: build
+      args:
+        NEXT_PUBLIC_BASE_PATH: ${BASE_PATH:-}
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://betonpoli:${POSTGRES_PASSWORD}@db:5432/betonpoli?schema=public
+      UPLOAD_DIR: /data/uploads
+      HOME: /tmp
+    # фото из сида пишутся в общую папку загрузок от того же пользователя, что и app (uid 100)
+    user: "100:101"
+    volumes:
+      - ./data/uploads:/data/uploads
+    command: npx prisma db seed
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: betonpoli
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: betonpoli
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U betonpoli"]
+      interval: 5s
+      retries: 10

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+web/.env
+web/uploads/
+web/src/generated/
+*.log
+.DS_Store
+# исходники от заказчика с ценами — не в репозиторий
+*.xlsx
+docs/*.docx
+photo_*.jpg
+deploy/.env
+deploy/data/
+deploy/*.credentials.txt

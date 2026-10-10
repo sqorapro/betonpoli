@@ -1,0 +1,275 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Админы ────────────────────────────────────────────────
+
+model AdminUser {
+  id           Int       @id @default(autoincrement())
+  login        String    @unique
+  passwordHash String
+  name         String    @default("")
+  createdAt    DateTime  @default(now())
+  sessions     Session[]
+}
+
+model Session {
+  id        String    @id // sha256 от токена из cookie
+  adminId   Int
+  admin     AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  @@index([adminId])
+}
+
+// ─── Каталог ───────────────────────────────────────────────
+
+model Category {
+  id             Int                 @id @default(autoincrement())
+  name           String
+  shortName      String              @default("") // для шапки: «Полимеры»
+  slug           String              @unique
+  parentId       Int?
+  parent         Category?           @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children       Category[]          @relation("CategoryTree")
+  sort           Int                 @default(0)
+  description    String              @default("")
+  seoTitle       String              @default("")
+  seoDescription String              @default("")
+  products       Product[]
+  attributes     CategoryAttribute[]
+
+  @@index([parentId])
+}
+
+enum AttributeType {
+  NUMBER
+  SELECT
+  TEXT
+}
+
+model Attribute {
+  id         Int                     @id @default(autoincrement())
+  name       String
+  code       String                  @unique
+  type       AttributeType           @default(TEXT)
+  unit       String                  @default("")
+  categories CategoryAttribute[]
+  values     ProductAttributeValue[]
+}
+
+// Набор характеристик категории; filterable — показывать в фильтрах
+model CategoryAttribute {
+  categoryId  Int
+  category    Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  attributeId Int
+  attribute   Attribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  sort        Int       @default(0)
+  filterable  Boolean   @default(true)
+
+  @@id([categoryId, attributeId])
+}
+
+enum StockStatus {
+  IN_STOCK
+  ON_ORDER
+  OUT_OF_STOCK
+}
+
+// Как считать расход товара
+enum ConsumptionType {
+  NONE // калькулятор не показывается
+  PER_AREA // кг (л) на 1 м²
+  PER_AREA_MM // кг на 1 м² на 1 мм толщины
+  PER_LENGTH // кг на 1 погонный метр
+  PER_AREA_UNITS // единиц упаковки на 1 м² (напр. 0.01 = 1 рулон на 100 м²)
+  FIXED // фиксированное число упаковок, не зависит от площади
+}
+
+model Product {
+  id               Int                     @id @default(autoincrement())
+  name             String
+  sku              String                  @unique // артикул = короткий код на сайте (EP-C251)
+  slug             String                  @unique
+  shortDescription String                  @default("") // одна строка под фото в сетке
+  description      String                  @default("")
+  categoryId       Int?
+  category         Category?               @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  stock            StockStatus             @default(IN_STOCK)
+  isPublished      Boolean                 @default(true)
+  sort             Int                     @default(0)
+  priceFrom        Decimal?                @db.Decimal(12, 2) // мин. цена фасовки — для сортировки; пересчитывается при сохранении
+  consumptionType  ConsumptionType         @default(NONE)
+  consumptionRate  Decimal?                @db.Decimal(10, 4)
+  defaultThickness Decimal?                @db.Decimal(6, 2) // мм, для PER_AREA_MM
+  seoTitle         String                  @default("")
+  seoDescription   String                  @default("")
+  createdAt        DateTime                @default(now())
+  updatedAt        DateTime                @updatedAt
+  images           ProductImage[]
+  packagings       Packaging[]
+  attributeValues  ProductAttributeValue[]
+  kitItems         KitItem[]
+  orderItems       OrderItem[]
+
+  @@index([categoryId])
+  @@index([priceFrom])
+}
+
+model ProductImage {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  path      String // относительно UPLOAD_DIR, без расширения размера
+  alt       String  @default("")
+  sort      Int     @default(0)
+
+  @@index([productId])
+}
+
+model ProductAttributeValue {
+  productId   Int
+  product     Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  attributeId Int
+  attribute   Attribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  valueText   String    @default("")
+  valueNumber Decimal?  @db.Decimal(14, 4)
+
+  @@id([productId, attributeId])
+  @@index([attributeId, valueNumber])
+  @@index([attributeId, valueText])
+}
+
+enum PackUnit {
+  KG
+  L
+  PCS
+  M
+}
+
+// Фасовка: тара с ценой. Цена за кг/л считается как price / amount.
+model Packaging {
+  id         Int         @id @default(autoincrement())
+  productId  Int
+  product    Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  amount     Decimal     @db.Decimal(10, 3) // 25 (кг), 5 (л), 1 (шт)
+  unit       PackUnit    @default(KG)
+  price      Decimal     @db.Decimal(12, 2) // за упаковку
+  sort       Int         @default(0)
+  kitItems   KitItem[]
+  orderItems OrderItem[]
+
+  @@index([productId])
+}
+
+// ─── Комплекты («пирог пола») ─────────────────────────────
+
+model Kit {
+  id               Int       @id @default(autoincrement())
+  name             String
+  slug             String    @unique
+  description      String    @default("")
+  isPublished      Boolean   @default(true)
+  usesThickness    Boolean   @default(false)
+  usesLength       Boolean   @default(false) // ввод в погонных метрах вместо м²
+  defaultArea      Decimal   @default(50) @db.Decimal(10, 2)
+  defaultThickness Decimal?  @db.Decimal(6, 2)
+  sort             Int       @default(0)
+  items            KitItem[]
+}
+
+model KitItem {
+  id              Int             @id @default(autoincrement())
+  kitId           Int
+  kit             Kit             @relation(fields: [kitId], references: [id], onDelete: Cascade)
+  productId       Int
+  product         Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  packagingId     Int? // какая фасовка кладётся в корзину; null = самая крупная
+  packaging       Packaging?      @relation(fields: [packagingId], references: [id], onDelete: SetNull)
+  consumptionType ConsumptionType
+  rate            Decimal         @db.Decimal(10, 4)
+  role            String          @default("") // «грунт», «финиш» — подпись в блоке
+  sort            Int             @default(0)
+
+  @@index([kitId])
+  @@index([productId])
+}
+
+// ─── Заявки ────────────────────────────────────────────────
+
+enum DeliveryMethod {
+  PICKUP
+  DELIVERY
+}
+
+enum OrderStatus {
+  NEW
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+// ORDER — обычная заявка; TECH_CHECK — «Проверка технолога»: корзина + телефон, без способа получения
+enum OrderType {
+  ORDER
+  TECH_CHECK
+}
+
+model Order {
+  id        Int             @id @default(autoincrement())
+  type      OrderType       @default(ORDER)
+  name      String          @default("")
+  phone     String
+  email     String          @default("")
+  delivery  DeliveryMethod?
+  comment   String         @default("")
+  consent   Boolean
+  status    OrderStatus    @default(NEW)
+  adminNote String         @default("")
+  total     Decimal        @db.Decimal(14, 2)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  items     OrderItem[]
+
+  @@index([status, createdAt])
+}
+
+// Снимок позиции на момент заявки — не меняется при правке товара
+model OrderItem {
+  id             Int        @id @default(autoincrement())
+  orderId        Int
+  order          Order      @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId      Int?
+  product        Product?   @relation(fields: [productId], references: [id], onDelete: SetNull)
+  packagingId    Int?
+  packaging      Packaging? @relation(fields: [packagingId], references: [id], onDelete: SetNull)
+  sku            String
+  name           String
+  packagingLabel String
+  unitPrice      Decimal    @db.Decimal(12, 2)
+  qty            Int
+
+  @@index([orderId])
+}
+
+// ─── Контент и настройки ───────────────────────────────────
+
+model Page {
+  slug           String   @id // delivery, contacts, privacy
+  title          String
+  content        String   @default("") // markdown
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  updatedAt      DateTime @updatedAt
+}
+
+model Setting {
+  key   String @id
+  value String
+}

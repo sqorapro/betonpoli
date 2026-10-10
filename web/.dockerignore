@@ -1,0 +1,13 @@
+node_modules
+.next
+.env
+uploads
+src/generated
+*.log
+.claude
+AGENTS.md
+CLAUDE.md
+prisma/seed-data/*.py
+.agents
+.windsurf
+.next

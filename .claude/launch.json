@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "web", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "memm",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/Users/vilya/Projects/memm", "run", "dev"],
+      "port": 8080
+    }
+  ]
+}

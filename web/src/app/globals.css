@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/* Утверждённая концепция: минимализм по мотивам yeezy.com */
+@theme {
+  --color-ink: #111111;
+  --color-muted: #767672;
+  --color-paper: #ffffff;
+  --color-tile: #f4f4f2;
+  --color-line: #e6e6e1;
+  --color-line-strong: #d6d6d2;
+  --color-accent: #f4640b; /* оранжевый из логотипа */
+  --color-danger: #b42318;
+
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --text-base: 12px;
+  --text-base--line-height: 1.5;
+  --text-sm: 11px;
+  --text-md: 14px;
+  --text-lg: 18px;
+  --text-xl: 28px;
+
+  --tracking-ui: 0.04em;
+
+  --breakpoint-xs: 360px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    letter-spacing: var(--tracking-ui);
+    text-transform: uppercase;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-muted);
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-muted);
+    opacity: 1;
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  /* Длинные тексты (описание, служебные страницы) — обычный регистр */
+  .prose-plain {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: var(--text-md);
+    line-height: 1.6;
+  }
+  .prose-plain p {
+    white-space: pre-line; /* описания импортированных товаров: «Характеристики» построчно */
+  }
+  .prose-plain p + p {
+    margin-top: 0.9em;
+  }
+  .prose-plain h2 {
+    font-size: var(--text-base);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ui);
+    font-weight: 600;
+    margin: 2em 0 0.8em;
+  }
+  .prose-plain ul {
+    list-style: disc;
+    padding-left: 1.2em;
+  }
+  .prose-plain a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn:hover {
+    color: var(--color-ink);
+    background: var(--color-tile);
+  }
+  .btn-primary {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    background: #2a2a2a;
+    color: var(--color-paper);
+  }
+  .btn-accent {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    font-weight: 600;
+  }
+  .btn-accent:hover {
+    background: #dd5806;
+    border-color: #dd5806;
+  }
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .field {
+    height: 44px;
+    width: 100%;
+    border: 1px solid var(--color-line-strong);
+    background: var(--color-paper);
+    padding: 0 12px;
+    font-size: var(--text-md);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-ink);
+  }
+  .label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--color-muted);
+  }
+}
+
+/* На серой подложке (#f4f4f2) обычный серый не дотягивает до контраста 4.5:1.
+   Вне @layer — иначе утилита text-muted из слоя utilities перебивает. */
+.bg-tile .text-muted,
+.bg-tile .label {
+  color: #63635f;
+}
+
+/* ─── Админка ─── */
+@layer components {
+  .adm-h1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .adm-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .adm-table th {
+    text-align: left;
+    font-weight: 400;
+    color: var(--color-muted);
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--color-line-strong);
+    white-space: nowrap;
+  }
+  .adm-table td {
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--color-line);
+    vertical-align: top;
+  }
+  .adm-table tr:hover td {
+    background: #fafaf8;
+  }
+  .adm-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid var(--color-line);
+  }
+  .adm-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .adm-section {
+    font-weight: 600;
+  }
+  .badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    background: var(--color-tile);
+    white-space: nowrap;
+  }
+}
