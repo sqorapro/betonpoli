@@ -1,0 +1,41 @@
+# Прод на сервере polexpert (138.16.162.119), рядом с polexpert.ru.
+# Образ собирается на другой машине и грузится через docker load (входящий канал сервера узкий, ~30–180 КБ/с):
+#   docker build --target run -t betonpoli-app:prod ../web
+# Запуск: cd /opt/betonpoli && docker compose -p betonpoli -f docker-compose.polexpert.yml up -d
+# Наружу порты не открываем: app подключён к сети polexpert, nginx polexpert.ru ходит на betonpoli-app:3000.
+services:
+  app:
+    image: betonpoli-app:prod
+    container_name: betonpoli-app
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://betonpoli:${POSTGRES_PASSWORD}@betonpoli-db:5432/betonpoli?schema=public
+    volumes:
+      - ./data/uploads:/data/uploads
+    networks:
+      - default
+      - polexpert
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    container_name: betonpoli-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: betonpoli
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: betonpoli
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U betonpoli"]
+      interval: 5s
+      retries: 10
+
+networks:
+  polexpert:
+    external: true
+    name: polimer-expert_internal

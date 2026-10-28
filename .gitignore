@@ -12,3 +12,6 @@ photo_*.jpg
 deploy/.env
 deploy/data/
 deploy/*.credentials.txt
+
+# секреты — не коммитить
+.env

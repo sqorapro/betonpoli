@@ -1,6 +1,7 @@
 #!/bin/sh
 # Ежедневный бэкап БД и фото (ТЗ: не меньше 7 копий).
 # cron: 30 3 * * * /opt/betonpoli/deploy/backup.sh >> /var/log/betonpoli-backup.log 2>&1
+# polexpert: COMPOSE_FILE=docker-compose.polexpert.yml, cron: 30 3 * * * cd /opt/betonpoli && COMPOSE_FILE=docker-compose.polexpert.yml ./backup.sh >> /var/log/betonpoli-backup.log 2>&1
 # Демо: PROJECT=betonpoli-demo DEST=/var/backups/betonpoli-demo ./backup.sh
 set -eu
 cd "$(dirname "$0")"
@@ -10,7 +11,7 @@ KEEP_DAYS="${KEEP_DAYS:-14}"
 STAMP=$(date +%Y-%m-%d_%H%M)
 mkdir -p "$DEST"
 
-docker compose -p "$PROJECT" exec -T db pg_dump -U betonpoli -Fc betonpoli > "$DEST/db_$STAMP.dump.tmp"
+docker compose -p "$PROJECT" ${COMPOSE_FILE:+-f "$COMPOSE_FILE"} exec -T db pg_dump -U betonpoli -Fc betonpoli > "$DEST/db_$STAMP.dump.tmp"
 mv "$DEST/db_$STAMP.dump.tmp" "$DEST/db_$STAMP.dump"
 tar -czf "$DEST/uploads_$STAMP.tar.gz" -C data uploads
 
